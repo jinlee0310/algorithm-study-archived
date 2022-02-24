@@ -1,0 +1,11 @@
+while q:
+	q에서 맨앞요소 빼기
+	location 1빼기
+	q에 있는 요소중 큰게 있나?
+		있으면 q에 다시넣기
+		if location==-1:
+			location+=len(q)
+	없으면서 location==-1:
+		답=cnt
+	없으면서 location!=-1:
+		cnt+=1
