@@ -54,14 +54,10 @@ export default function solution(maps) {
         }
     }
     const leverResult = bfs(visited, maps, [startX, startY], [leverX, leverY]);
-    console.log(leverResult);
     const visited2 = Array.from(Array(maps.length), () =>
         new Array(maps[0].length).fill(0)
     );
     const endResult = bfs(visited2, maps, [leverX, leverY], [endX, endY]);
-    console.log(endResult);
     if (leverResult === -1 || endResult === -1) return -1;
     return leverResult + endResult;
 }
-
-solution(["SOOOL", "XXXXO", "OOOOO", "OXXXX", "OOOOE"]);
