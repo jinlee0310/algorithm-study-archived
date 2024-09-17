@@ -22,12 +22,28 @@ const hasSameColor = (paper) => {
 
 const solution = (input) => {
   const [n, m] = input[0].split(" ").map((v) => Number(v));
-  const arr = input[1].split(" ").map((v) => Number(v));
-  const max = Math.max(...arr);
+  const arr = input[1]
+    .split(" ")
+    .map((v) => Number(v))
+    .sort((a, b) => a - b);
 
   let st = 0;
-  en = max;
-  while (st < en) {}
+  en = arr[arr.length - 1];
+  while (st <= en) {
+    const mid = Math.floor((st + en) / 2);
+    let sum = 0;
+    for (const tree of arr) {
+      if (tree - mid >= 0) {
+        sum += tree - mid;
+      }
+    }
+    if (sum === m) {
+      console.log(mid);
+      return;
+    } else if (sum > m) st = mid + 1;
+    else en = mid - 1;
+  }
+  console.log(en);
 };
 
 solution(input);

@@ -17,9 +17,7 @@ const solution = (input) => {
     numArr.push(Number(input[i]));
   }
   numArr.sort((a, b) => a - b);
-  for (let i = 0; i < numArr.length; i++) {
-    console.log(numArr[i]);
-  }
+  console.log(numArr.join("\n"));
 };
 
 solution(input);
